@@ -8,8 +8,13 @@ import { movies } from './models/movie.model';
 })
 export class MovieService {
 
+  constructor() { }
+
   getMovies() {
     return of(movies);
   }
-  constructor() { }
+
+  getMovie(id: number) {
+    return of(movies.find(movie => +movie.id === +id));
+  }
 }
