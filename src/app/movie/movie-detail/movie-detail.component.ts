@@ -18,11 +18,17 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   constructor(private movieService: MovieService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.movieSub$ = this.movieService.getMovie(this.id).subscribe(movie => {
-      this.movie = movie;
-      console.log(this.movie);
-    })
+    // this.id = +this.route.snapshot.paramMap.get('id');
+    // this.movieSub$ = this.movieService.getMovie(this.id).subscribe(movie => {
+    //   this.movie = movie;
+    //   console.log(this.movie);
+    // })
+
+    this.route.paramMap.subscribe(params => {
+      const id = +params.get('id');
+      this.movieSub$ = this.movieService.getMovie(id).subscribe( movie => this.movie = movie);
+      console.log(this.movie)
+    });
   }
 
   ngOnDestroy(): void {
