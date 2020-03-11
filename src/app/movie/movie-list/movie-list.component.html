@@ -1,1 +1,9 @@
-<p>movie-list works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group" *ngIf='movies$ | async as movies'>
+      <li class="list-group-item" *ngFor='let movie of movies'>
+        {{ movie?.name }}
+      </li>
+    </ul>
+  </div>
+</div>
