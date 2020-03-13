@@ -1,3 +1,20 @@
 <nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">MOVIENITE</span>
+  <div class="container">
+    <span class="navbar-brand mb-0 h1">MOVIENITE</span>
+  </div>
 </nav>
+<div class="nav-scroller bg-white shadow-sm">
+  <div class="container">
+    <nav class="nav nav-underline">
+      <a class="nav-link active" href="#">Home</a>
+      <a class="nav-link" href="#">
+        {{ movieTitle$ | async }}
+        <span class="badge badge-pill bg-info align-text-bottom"> {{ movieGenre$ | async }}</span>
+      </a>
+    </nav>
+  </div>
+
+</div>
+
+
+
