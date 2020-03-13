@@ -28,7 +28,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
 
     this.route.paramMap.subscribe(params => {
       const id = +params.get('id');
-      this.movieSub$ = this.movieService.getMovie(id).subscribe( movie => {
+      this.movieSub$ = this.movieService.fetchMovie(id).subscribe( movie => {
         this.movie = movie;
         this.navbarService.movieTitle.next(movie.name);
         this.navbarService.movieGenre.next(movie.genre);
