@@ -8,15 +8,15 @@
     <div class="row">
       <div class="col-md-8">
         <nav class="nav nav-underline">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#">
+          <a class="nav-link active" routerLink="/">Home</a>
+          <a class="nav-link" >
             {{ movieTitle$ | async }}
             <span class="badge badge-pill bg-info align-text-bottom"> {{ movieGenre$ | async }}</span>
           </a>
         </nav>
       </div>
       <div class="col-md-4">
-        <a href="" class="nav-link btn btn-plain float-right">Add Movie</a>
+        <a class="nav-link btn btn-sm btn-outline-success float-right my-2" routerLink='/movies/create'>Add Movie</a>
       </div>
     </div>
   </div>
