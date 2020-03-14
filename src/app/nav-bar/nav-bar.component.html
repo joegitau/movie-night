@@ -9,7 +9,7 @@
       <div class="col-md-8">
         <nav class="nav nav-underline">
           <a class="nav-link active" routerLink="/">Home</a>
-          <a class="nav-link" >
+          <a class="nav-link" *ngIf="!router.url.includes('/movies')">
             {{ movieTitle$ | async }}
             <span class="badge badge-pill bg-info align-text-bottom"> {{ movieGenre$ | async }}</span>
           </a>
