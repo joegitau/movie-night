@@ -78,8 +78,8 @@
       "id": 11
     },
     {
-      "movieName": "DC: Legends of Tomorrow",
-      "poster": "https://image.tmdb.org/t/p/w500/rGE9sOt1jOtKtb3bARi33Eg1xfK.jpg",
+      "name": "DC's Legends of Tomorrow",
+      "image": "https://image.tmdb.org/t/p/w500/rGE9sOt1jOtKtb3bARi33Eg1xfK.jpg",
       "genre": "Sci-fi",
       "releaseYear": "2021",
       "id": 12

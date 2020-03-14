@@ -6,27 +6,27 @@
           <div class="mb-3">
             <label>Title</label>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Movie title" formControlName='movieName'
+              <input type="text" class="form-control" placeholder="Movie title" formControlName='name'
               [ngClass]="{
-                'is-invalid': (movieForm.get('movieName').dirty || movieForm.get('movieName').touched) && !movieForm.get('movieName').valid
+                'is-invalid': (movieForm.get('name').dirty || movieForm.get('name').touched) && !movieForm.get('name').valid
               }"
               >
               <div class="invalid-feedback">
-                <span *ngIf="movieForm.get('movieName').errors?.required">Movie title is required</span>
+                <span *ngIf="movieForm.get('name').errors?.required">Movie title is required</span>
               </div>
             </div>
           </div>
           <div class="mb-3">
             <label>Movie Poster</label>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="poster url" formControlName='poster'
+              <input type="text" class="form-control" placeholder="poster url" formControlName='image'
                 [ngClass]="{'is-invalid':
-                (movieForm.get('poster').dirty || movieForm.get('poster').touched)
-                && !movieForm.get('poster').valid
+                (movieForm.get('image').dirty || movieForm.get('image').touched)
+                && !movieForm.get('image').valid
               }"
               >
               <div class="invalid-feedback">
-                <span *ngIf="movieForm.get('poster').errors?.required">Poster url is required</span>
+                <span *ngIf="movieForm.get('image').errors?.required">Poster url is required</span>
               </div>
             </div>
           </div>

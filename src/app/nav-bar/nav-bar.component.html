@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container">
-    <span class="navbar-brand mb-0 h1">MOVIENITE</span>
+    <a class="navbar-brand mb-0 h1" routerLink='/'>MOVIENITE</a>
   </div>
 </nav>
 <div class="nav-scroller bg-white shadow-sm">
@@ -9,7 +9,7 @@
       <div class="col-md-8">
         <nav class="nav nav-underline">
           <a class="nav-link active" routerLink="/">Home</a>
-          <a class="nav-link" *ngIf="!router.url.includes('/movies')">
+          <a class="nav-link">
             {{ movieTitle$ | async }}
             <span class="badge badge-pill bg-info align-text-bottom"> {{ movieGenre$ | async }}</span>
           </a>

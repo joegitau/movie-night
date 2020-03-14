@@ -14,8 +14,8 @@ export class CreateMovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieForm = this.fb.group({
-      movieName: ['', Validators.required],
-      poster: ['', Validators.required],
+      name: ['', Validators.required],
+      image: ['', Validators.required],
       genre: ['', Validators.required],
       releaseYear: ['', Validators.required]
     });
