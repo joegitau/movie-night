@@ -19,12 +19,7 @@ export class MovieService {
     return this.http.get<Movie>(`http://localhost:3000/movies/${id}`)
   }
 
-  //fetching from local model:
-  // getMovies() {
-  //   return of(movies);
-  // }
-
-  // getMovie(id: number) {
-  //   return of(movies.find(movie => +movie.id === +id));
-  // }
+  addMovie(movie: Movie) {
+    return this.http.post('http://localhost:3000/movies', movie);
+  }
 }

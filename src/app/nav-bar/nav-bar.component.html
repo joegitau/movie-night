@@ -16,7 +16,10 @@
         </nav>
       </div>
       <div class="col-md-4">
-        <a class="nav-link btn btn-sm btn-outline-success float-right my-2" routerLink='/movies/create'>Add Movie</a>
+        <a class="nav-link btn btn-sm btn-outline-success float-right my-2"
+        routerLink='/movies/create'
+        *ngIf="!router.url.includes('/movies/create')"
+        >Add Movie</a>
       </div>
     </div>
   </div>
