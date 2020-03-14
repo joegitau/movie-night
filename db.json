@@ -83,6 +83,13 @@
       "genre": "Sci-fi",
       "releaseYear": "2021",
       "id": 12
+    },
+    {
+      "name": "Aquaman",
+      "image": "https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg",
+      "genre": "Action",
+      "releaseYear": "2019",
+      "id": 13
     }
   ]
 }
