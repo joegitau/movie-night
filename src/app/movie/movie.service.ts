@@ -27,6 +27,10 @@ export class MovieService {
       .pipe(catchError(this.handleErrors));
   }
 
+  updateMovie(movie: Movie) {
+    return this.http.put(`http://localhost:3000/movies/${movie.id}`, movie);
+  }
+
   handleErrors(err: HttpErrorResponse) {
     return throwError(err);
   }

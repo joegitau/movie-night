@@ -1,49 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Movie } from '../models/movie.model';
 import { MovieService } from '../movie.service';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { MovieFormComponent } from '../movie-form/movie-form.component';
 @Component({
   selector: 'app-create-movie',
   templateUrl: './create-movie.component.html',
   styleUrls: ['./create-movie.component.scss']
 })
 export class CreateMovieComponent implements OnInit {
-  movieForm: FormGroup;
-  movieError: any;
+  @ViewChild('movieForm') movieForm: MovieFormComponent;
 
-  constructor(
-    private fb: FormBuilder,
-    private movieService: MovieService,
-    private router: Router,
-    private toastr: ToastrService
-    ) { }
+  movie: Movie;
+
+  constructor(private movieService: MovieService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    this.movieForm = this.fb.group({
-      name: ['', Validators.required],
-      image: ['', Validators.required],
-      genre: ['', Validators.required],
-      releaseYear: ['', Validators.required]
-    });
   }
 
   createMovie() {
-    if (this.movieForm.valid) {
-      this.movieService.addMovie(this.movieForm.value).subscribe(
-        () => {
-          this.movieForm.reset();
-          this.toastr.success('Movie successfully added!', 'Create Movie');
 
-          this.router.navigate(['/']);
-        },
-        error => {
-          this.movieError = error;
-          this.toastr.error('Movie not created!', 'Create Movie')
-        }
-      );
-    }
-    this.router.navigate(['/']);
+      if (this.movie) {
+        this.movieService.addMovie(this.movie).subscribe(
+          () => {
+            this.movieForm.reset();
+            this.toastr.success('Movie successfully added!', 'Create Movie');
+
+            this.router.navigate(['/']);
+          },
+          error => {
+            this.toastr.error('Movie not created!', 'Create Movie')
+          }
+        );
+      }
+
+    // this.router.navigate(['/']);
   }
-
 }

@@ -90,27 +90,6 @@
       "genre": "Action",
       "releaseYear": "2019",
       "id": 13
-    },
-    {
-      "name": "Dummy Movie",
-      "image": "https://m.media-amazon.com/images/M/MV5BMTUwNWI2ZDQtODRjNy00OGE1LThlNGEtYzU2NDU5ZGMzN2RmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SY1000_CR0,0,640,1000_AL_.jpg",
-      "genre": "Action",
-      "releaseYear": "2022",
-      "id": 14
-    },
-    {
-      "name": "Dummy Movie",
-      "image": "https://m.media-amazon.com/images/M/MV5BMTUwNWI2ZDQtODRjNy00OGE1LThlNGEtYzU2NDU5ZGMzN2RmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SY1000_CR0,0,640,1000_AL_.jpg",
-      "genre": "Action",
-      "releaseYear": "2020",
-      "id": 15
-    },
-    {
-      "name": "John Snow",
-      "image": "http://google.com",
-      "genre": "Action",
-      "releaseYear": "2020",
-      "id": 16
     }
   ]
 }

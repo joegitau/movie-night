@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Movie } from '../models/movie.model';
 import { MovieService } from '../movie.service';
 import { NavbarService } from 'src/app/nav-bar/services/navbar.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: "app-movie-detail",
   templateUrl: "./movie-detail.component.html",
@@ -20,7 +21,8 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute,
-    private navbarService: NavbarService
+    private navbarService: NavbarService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -41,7 +43,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
         },
         error => {
           this.movieErrors = error;
-          console.log("Something went rogue!", error);
+          this.toastr.error('Something went rogue', 'Errors');
         }
       );
     });

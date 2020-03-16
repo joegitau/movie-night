@@ -1,0 +1,64 @@
+<div class="row mt-5">
+  <div class="col-md-8 offset-md-2">
+    <div class="card mb-5">
+      <div class="card-body p-4">
+        <form novalidate [formGroup]='movieForm' (ngSubmit)='createMovie()'>
+          <div class="mb-3">
+            <label>Title</label>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Movie title" formControlName='name'
+              [ngClass]="{
+                'is-invalid': (movieForm.get('name').dirty || movieForm.get('name').touched) && !movieForm.get('name').valid
+              }"
+              >
+              <div class="invalid-feedback">
+                <span *ngIf="movieForm.get('name').errors?.required">Movie title is required</span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>Movie Poster</label>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="poster url" formControlName='image'
+                [ngClass]="{'is-invalid':
+                (movieForm.get('image').dirty || movieForm.get('image').touched)
+                && !movieForm.get('image').valid
+              }"
+              >
+              <div class="invalid-feedback">
+                <span *ngIf="movieForm.get('image').errors?.required">Poster url is required</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Genre</label>
+              <input type="text" class="form-control"  placeholder="Genre" formControlName='genre'
+                [ngClass]="{
+                  'is-invalid': (movieForm.get('genre').dirty || movieForm.get('genre').touched) && !movieForm.get('genre').valid
+                }"
+              >
+              <div class="invalid-feedback">
+                <span *ngIf="movieForm.get('genre').errors?.required">Genre is required.</span>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Release year</label>
+              <input type="text" class="form-control"  placeholder="Release year" formControlName='releaseYear'
+              [ngClass]="{
+                'is-invalid': (movieForm.get('releaseYear').dirty || movieForm.get('releaseYear').touched) && !movieForm.get('releaseYear').valid
+              }"
+              >
+              <div class="invalid-feedback">
+                <span *ngIf="movieForm.get('releaseYear').errors?.required">Release year is required.</span>
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <ng-content></ng-content>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

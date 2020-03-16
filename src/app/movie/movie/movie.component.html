@@ -11,6 +11,9 @@
               <h5 class="card-title">{{ movie?.name }}</h5>
               <p class="card-text">{{ movie?.genre }}</p>
               <p class="card-text"><small class="text-muted">{{ movie?.releaseYear }}</small></p>
+              <p>
+                <a [routerLink]="['/movies/edit', movie.id]">Edit</a>
+              </p>
             </div>
           </div>
         </div>
