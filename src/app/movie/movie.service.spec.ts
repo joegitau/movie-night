@@ -6,7 +6,7 @@ import { find } from 'rxjs/operators';
 import { MovieService } from './movie.service';
 import { Movie } from './models/movie.model';
 
-fdescribe('MovieService', () => {
+describe('MovieService', () => {
   let service: MovieService;
 
   beforeEach(() => {
